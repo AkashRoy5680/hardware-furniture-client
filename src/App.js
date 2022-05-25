@@ -6,6 +6,10 @@ import { Route, Routes } from 'react-router-dom';
 import About from './Pages/About/About';
 import Shop from './Pages/Shop/Shop';
 import Footer from './Shared/Footer/Footer';
+import Purchase from './Purchase/Purchase';
+import NotFound from './NotFound/NotFound';
+import Login from './Authentication/Login';
+import SignUp from './Authentication/SignUp';
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
     <Route path="/home" element={<Home></Home>}></Route>
     <Route path="/about" element={<About></About>}></Route>
     <Route path="/shop" element={<Shop></Shop>}></Route>
+    <Route path="/login" element={<Login></Login>}></Route>
+    <Route path="/signup" element={<SignUp></SignUp>}></Route>
+    <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route>
+    <Route path="*" element={<NotFound></NotFound>}></Route>
     </Routes>
     <Footer></Footer>
     </div>
