@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../Firebase/Firebase.init";
 import google from "../Images/social/google.png";
+import Loading from "../Shared/Loading";
 
 
 const Login = () => {
@@ -17,6 +18,8 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const navigate=useNavigate();
 
+    let signInError;
+
     const onSubmit = async(data) => {console.log(data)
         await signInWithEmailAndPassword(data.email, data.password);
         reset();
@@ -24,6 +27,16 @@ const Login = () => {
 
     if(user||gUser){
         navigate("/home");
+    }
+
+    if(loading||gLoading){
+        return <Loading></Loading>
+    }
+
+    if(error||gError){
+        signInError=(
+            <p className="text-red-500"><small>{error?.message||gError?.message}</small></p>
+        )
     }
   return (
     <div>
@@ -82,6 +95,7 @@ const Login = () => {
                 </a>
               </label>
             </div>
+            {signInError}
             <div class="form-control mt-2">
               <button class="btn btn-primary text-white">Login</button>
             </div>
