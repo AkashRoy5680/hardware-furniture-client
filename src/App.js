@@ -4,7 +4,7 @@ import Navbar from './Shared/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import About from './Pages/About/About';
-import Shop from './Pages/Shop/Shop';
+
 import Footer from './Shared/Footer/Footer';
 import Purchase from './Purchase/Purchase';
 import NotFound from './NotFound/NotFound';
@@ -13,7 +13,9 @@ import SignUp from './Authentication/SignUp';
 import AddReview from './Dashboard/AddReview';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import MyOrder from './Dashboard/MyOrder';
+import Dashboard from './Dashboard/Dashboard';
 import MyProfile from './Dashboard/MyProfile';
 
 function App() {
@@ -25,11 +27,15 @@ function App() {
     <Route path="/home" element={<Home></Home>}></Route>
     <Route path="/about" element={<About></About>}></Route>
     <Route path="/addreview" element={<AddReview></AddReview>}></Route>
-    <Route path="/myorder" element={<MyOrder></MyOrder>}></Route>
+    
     <Route path="/myprofile" element={<MyProfile></MyProfile>}></Route>
     <Route path="/login" element={<Login></Login>}></Route>
     <Route path="/signup" element={<SignUp></SignUp>}></Route>
     <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route>
+    <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+    <Route index element={<MyOrder></MyOrder>}></Route>
+    <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+    </Route>
     <Route path="*" element={<NotFound></NotFound>}></Route>
     </Routes>
     <Footer></Footer>

@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
   const Tool = ({ tool }) => {
-  const { _id, name, img, price, quantity } = tool;
+  const { _id, name, img, price, available } = tool;
   const navigate = useNavigate();
-  
+
   const redirectPurchase = (id) => {
     navigate(`/purchase/${id}`);
   };
@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
           <p>Price: {price}</p>
-          <p>Quantity: {quantity}</p>
+          <p>Availability: {available}</p>
           <div class="card-actions justify-end">
             <button
               onClick={() => redirectPurchase(_id)}

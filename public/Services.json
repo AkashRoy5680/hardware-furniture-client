@@ -1,62 +1,56 @@
 [
     {
        
-        "name": "HATIL",
-        "price": "30000",
-        "description": "HATIL is considered to be the 'game-changer' in Bangladesh's furniture (ফার্নিচার) industry.",
-        "img": "https://i.ibb.co/vzWVPFT/furniture1.jpg",
-        "quantity":"500",
-        "soldItem":"158",
-        "supplierName":"Backhamm"
+        "name": "DSLR Camera",
+        "price": "300",
+        "description": "A camera normally has a field of view that ranges from a few degrees to, at most, 180°.",
+        "img": "https://i.ibb.co/HDkcyqz/camera1.jpg",
+        "min":"20",
+        "available":"1058"
     },
     {
       
-        "name": "PARTEX",
-        "price": "100000",
-        "description": "Partex Furniture(BD) is one of the Largest Furniture Manufacturers in Bangladesh.",
-        "img": "https://i.ibb.co/jVWybVS/furniture2.jpg",
-        "quantity":"1200",
-        "soldItem":"758",
-        "supplierName":"David"
+        "name": "360 Camera",
+        "price": "100",
+        "description": "An 360 camera or action cam is a digital camera designed for recording action while being immersed in it. Action cameras are therefore typically compact and rugged, and waterproof at surface-level.",
+        "img": "https://i.ibb.co/LRZVgs2/camera7.jpg",
+        "min":"200",
+        "available":"758"
     },
     {
        
-        "name": "IKEA",
-        "price": "135000",
-        "description": "IKEA is one of the top 10 furniture brands in the world due to its large online presence. IKEA’s website has over 12,000 listed products that generate 2.1 billion visitors per year",
-        "img": "https://i.ibb.co/yfcfTzM/furniture3.jpg",
-        "quantity":"1500",
-        "soldItem":"628",
-        "supplierName":"jhonson"
+        "name": "3D Camcorder",
+        "price": "135",
+        "description": "An Camcorder camera, a type of rostrum camera, is a movie camera specially adapted for frame-by-frame shooting of animation.",
+        "img": "https://i.ibb.co/JKLjfky/camera5.jpg",
+        "min":"300",
+        "available":"6280"
     },
     {
         
-        "name": "Ashley HomeStore",
-        "price": "180000",
-        "description": "Ashley HomeStore is an American furniture store chain and a manufacturer of furniture products. Ashley HomeStore was founded 23 years ago in 1997 in Anchorage, Alaska, U.S. Ashley HomeStore’s headquarters are in Brandon, Florida, U.S..",
-        "img": "https://i.ibb.co/tXbhtf6/furniture4.jpg",
-        "quantity":"4500",
-        "soldItem":"1628",
-        "supplierName":"Millan"
+        "name": "Action camera",
+        "price": "180",
+        "description": "An action camera or action cam is a digital camera designed for recording action while being immersed in it. Action cameras are therefore typically compact and rugged, and waterproof at surface-level.",
+        "img": "https://i.ibb.co/cgcVt28/camera4.jpg",
+        "min":"45",
+        "available":"1620"
     },
     {
        
-        "name": "Raymour Flanigan",
-        "price": "100",
-        "description": "Raymour & Flanigan, headquartered in Liverpool, New York, U.S, is an American furniture retail chain.  7th on BizVibe’s list of the top 10 furniture brands in the world.",
-        "img": "https://i.ibb.co/7jKX7hv/furniture5.jpg",
-        "quantity":"14500",
-        "soldItem":"6328",
-        "supplierName":"Flintoff"
+        "name": "Animation camera",
+        "price": "170",
+        "description": "A backup camera (also called a reversing camera or rear-view camera) is a special type of video camera that is produced specifically for the purpose of being attached to the rear of a vehicle to aid in backing up, and to alleviate the rear blind spot.",
+        "img": "https://i.ibb.co/JKLjfky/camera5.jpg",
+        "min":"45",
+        "available":"6328"
     },
     {
       
-        "name": "Kartell",
+        "name": "Camcorder",
         "price": "300000",
-        "description": "The company grosses $100 million per year. In addition to its own stores, Kartell furniture products are sold by more than 150 independent retailers in the United States.",
-        "img": "https://i.ibb.co/dWsdcHs/furniture6.jpg",
-        "quantity":"3500",
-        "soldItem":"2628",
-        "supplierName":"Robinwood"
+        "description": "A digital camera is a camera that captures photographs in digital memory. Most cameras produced today are digital,[1] largely replacing those that capture images on photographic film",
+        "img": "https://i.ibb.co/dbSh4Gj/camera6.jpg",
+        "min":"35",
+        "available":"2628"
     }
 ]

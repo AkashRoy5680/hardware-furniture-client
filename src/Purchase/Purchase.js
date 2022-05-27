@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../Firebase/Firebase.init";
+import Loading from "../Shared/Loading";
 
 const Purchase = () => {
-  const { register,handleSubmit,reset } = useForm();
+  const { register,formState: { errors },handleSubmit,reset,watch } = useForm();
   const { id } = useParams();
   const [purchase, setPurchase] = useState({});
-  const [user] = useAuthState(auth);
+  const [user,loading] = useAuthState(auth);
   useEffect(() => {
     const url = `http://localhost:5000/service/${id}`;
     fetch(url)
@@ -17,8 +19,46 @@ const Purchase = () => {
   }, [id]);
 
   const onSubmit = async(data) => {console.log(data)
+    
+    const order={
+      userName:user.displayName,
+      userEmail:user.email,
+      orderName:purchase.name,
+      orderDescription:purchase.description,
+      minQuantity:purchase.min,
+      availability:purchase.available,
+      price:totalPrice,
+      phone:data.phone,
+    }
+    console.log(order)
     reset();
-};
+
+    fetch("http://localhost:5000/order",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(order)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      if(data.insertedId){
+        toast("Data Successfully send to database")
+      }
+    })
+  };
+
+ 
+
+  
+
+  const availability=(watch("availability"));
+  const totalPrice = availability * purchase.price ;
+
+  if(loading){
+  return <Loading></Loading>
+  }
 
   return (
     <div>
@@ -41,42 +81,28 @@ const Purchase = () => {
                 placeholder="Email"
                 class="input input-bordered"
                 {...register("email")}
-                value={user.email}
-                disabled
+                value={user?.email}
+                readOnly
               /> 
             </div>
+
             <div class="form-control mb-2">
               <textarea
                 type="text"
-                placeholder="Description"
+                placeholder="Name"
                 class="input input-bordered"
-                {...register("description")}
-                value={purchase.description}
-                disabled
+                {...register("name")}
+                value={purchase.name}
+                disabled          
               /> 
             </div>
+
             <div class="form-control mb-2">
               <input
                 type="number"
-                placeholder="Min. Order"
+                placeholder={`${purchase.available}`}
                 class="input input-bordered"
-                {...register("minorder")}
-              /> 
-            </div>
-            <div class="form-control mb-2">
-              <input
-                type="number"
-                placeholder="Max. Order"
-                class="input input-bordered"
-                {...register("availability")}
-              /> 
-            </div>
-            <div class="form-control mb-2">
-              <input
-                type="number"
-                placeholder="Quantity"
-                class="input input-bordered"
-                {...register("quantity")}
+                {...register("availability",{min:purchase.min,max:purchase.available})}
               /> 
             </div>
             <div class="form-control mb-2">
@@ -85,6 +111,8 @@ const Purchase = () => {
                 placeholder="Total Price"
                 class="input input-bordered"
                 {...register("price")}
+                value={totalPrice} 
+                readOnly
               /> 
             </div>
             <div class="form-control mb-2">
