@@ -3,18 +3,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../Firebase/Firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
-    const[user]=useAuthState(auth)
+    const[user,loading]=useAuthState(auth)
     const { register,handleSubmit,reset } = useForm();
     const onSubmit = async(data) => {
         console.log(data);
         reset();
-
+    
     //send data to server
-    const url="http://localhost:5000/profile";
+    const url=`http://localhost:5000/profile/${user.email}`;
     fetch(url,{
-        method:"POST",
+        method:"PUT",
         headers:{
             "content-type":"application/json"
         },
@@ -22,10 +23,14 @@ const MyProfile = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        if(data.insertedId){
+        console.log(data)
+        if(data.acknowledged===true){
             toast("Your profile is updated");
         }
     })
+    };
+    if(loading){
+        return <Loading></Loading>
     }
     return (
         <div>
@@ -45,7 +50,7 @@ const MyProfile = () => {
                   class="input input-bordered"
                   {...register("name")}
                   value={user.displayName}
-                  readOnly
+                
                 /> 
               </div>
               <div class="form-control">
@@ -58,7 +63,7 @@ const MyProfile = () => {
                   class="input input-bordered"
                   {...register("email")}
                   value={user.email}
-                  readOnly
+                
                 /> 
               </div>
               <div class="form-control">
