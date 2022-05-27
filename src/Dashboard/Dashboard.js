@@ -7,7 +7,7 @@ const Dashboard = () => {
       <div class="drawer drawer-mobile">
         <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col ">
-          <h2 className="bg-accent text-white font-bold">DashBoard!!!</h2>
+          <h2 className="bg-accent text-white font-bold p-5">DashBoard!!!</h2>
           <Outlet></Outlet>
         </div>
         <div class="drawer-side">

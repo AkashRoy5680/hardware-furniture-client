@@ -14,7 +14,7 @@ const MyOrder = () => {
     },[user])
     return (
         <div>
-            <h2>My Order!{orders.length}</h2>
+            <h2 className='m-3 text-2xl'>My Order: {orders.length}</h2>
             <div class="overflow-x-auto">
   <table class="table w-full">
     <thead>
@@ -29,7 +29,7 @@ const MyOrder = () => {
         {
             orders.map((order,index)=>
                 <tr>
-                <th>{index}</th>
+                <th>{index+1}</th>
                 <td>{order.orderName}</td>
                 <td>{order.minQuantity}</td>
                 <td>{order.price}</td>
