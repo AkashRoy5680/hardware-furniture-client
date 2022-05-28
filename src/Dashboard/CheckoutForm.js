@@ -2,10 +2,13 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 
 const CheckoutForm = ({order}) => {
-    const{price}=order;
+    const{_id,price,email,userName}=order;
     const stripe=useStripe();
     const elements=useElements();
     const[cardError,setCardError]=useState("");
+    const[success,setSuccess]=useState("");
+    const[processing,setProcessing]=useState(false);
+    const[transactionId,setTransactionId]=useState("");
     const[clientSecret,setClientSecret]=useState("");
 
     useEffect(()=>{
@@ -41,6 +44,48 @@ const CheckoutForm = ({order}) => {
           });
 
           setCardError(error?.message||"");
+          setSuccess("")
+          setProcessing(true)
+          //Confirm Card Payment
+          const {paymentIntent, intentError} = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+              payment_method: {
+                card: card,
+                billing_details: {
+                  name: userName,
+                  email:email
+                },
+              },
+            },
+          );
+          if(intentError){
+              setCardError(intentError?.message);
+              setProcessing(false)
+          }
+          else{
+              setCardError("");
+              setTransactionId(paymentIntent.id)
+              console.log(paymentIntent)
+              setSuccess("Congratulations! Your payment is completed.");
+              // Store payment on Database
+
+              const payment={
+                  order:_id,
+                  transactionId:paymentIntent.id
+              }
+
+              fetch(`http://localhost:5000/order/${_id}`,{
+                  method:"PATCH",
+                  body:JSON.stringify(payment)
+              })
+              .then(res=>res.json())
+              .then(data=>{
+                  setProcessing(false)
+                  console.log(data)
+              })
+
+          }
     }
   return (
     <>
@@ -61,12 +106,18 @@ const CheckoutForm = ({order}) => {
           },
         }}
       />
-      <button className="btn btn-xs btn-secondary text-white" type="submit" disabled={!stripe || !clientSecret}>
+      <button className="btn btn-xs p-3 btn-secondary text-white" type="submit" disabled={!stripe || !clientSecret}>
         Pay
       </button>
     </form>
     {
         cardError && <p className="text-red-500">{cardError}</p>
+    }
+    {
+        success && <div className="text-green-500">
+            <p>{success}</p>
+            <p>Your transaction Id: <span className="text-accent font-bold">{transactionId}</span></p>
+        </div>
     }
     </>
   );
