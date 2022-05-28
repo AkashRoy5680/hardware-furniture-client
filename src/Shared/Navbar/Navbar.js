@@ -19,10 +19,10 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/signup">SignUp</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <Link to="/portfolio">MY Portfolio</Link>
       </li>
       {user && (
         <li>
@@ -38,6 +38,9 @@ const Navbar = () => {
         ) : (
           <Link to="/login">Login</Link>
         )}
+      </li>
+      <li>
+        <Link to="/signup">SignUp</Link>
       </li>
     </>
   );
