@@ -18,7 +18,7 @@ const Purchase = () => {
   const [purchase, setPurchase] = useState({});
   const [user, loading] = useAuthState(auth);
   useEffect(() => {
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://secure-beach-13890.herokuapp.com/service/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
@@ -40,7 +40,7 @@ const Purchase = () => {
     console.log(order);
     reset();
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://secure-beach-13890.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -71,9 +71,9 @@ const Purchase = () => {
             <div class="card-body">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="form-control">
-                <label class="label">
-                <span class="label-text">UserName</span>
-                </label>
+                  <label class="label">
+                    <span class="label-text">UserName</span>
+                  </label>
                   <input
                     type="text"
                     placeholder="UserName"
@@ -83,9 +83,9 @@ const Purchase = () => {
                   />
                 </div>
                 <div class="form-control">
-                <label class="label">
-                <span class="label-text">Email</span>
-                </label>
+                  <label class="label">
+                    <span class="label-text">Email</span>
+                  </label>
                   <input
                     type="email"
                     placeholder="Email"
@@ -97,9 +97,9 @@ const Purchase = () => {
                 </div>
 
                 <div class="form-control">
-                <label class="label">
-                <span class="label-text">Product Name</span>
-                </label>
+                  <label class="label">
+                    <span class="label-text">Product Name</span>
+                  </label>
                   <input
                     type="text"
                     placeholder="Name"
@@ -111,9 +111,9 @@ const Purchase = () => {
                 </div>
 
                 <div class="form-control">
-                <label class="label">
-                <span class="label-text">Availability</span>
-                </label>
+                  <label class="label">
+                    <span class="label-text">Availability</span>
+                  </label>
                   <input
                     type="number"
                     placeholder={`${purchase.available}`}
@@ -125,9 +125,9 @@ const Purchase = () => {
                   />
                 </div>
                 <div class="form-control">
-                <label class="label">
-                <span class="label-text">Price</span>
-                </label>
+                  <label class="label">
+                    <span class="label-text">Price</span>
+                  </label>
                   <input
                     type="number"
                     placeholder="Total Price"
@@ -145,12 +145,18 @@ const Purchase = () => {
             </div>
           </div>
           <div class="text-center lg:text-left">
-          <img style={{height:"200px",width:"400px"}} src={purchase.img} alt="" />
+            <img
+              style={{ height: "200px", width: "400px" }}
+              src={purchase.img}
+              alt=""
+            />
             <p class="py-3">
-            <h2 className="text-center font-bold">{purchase.name}</h2>
-            <p className="text-center">Minimum Quantity: {purchase.min}</p>
-            <p className="text-center">Available Item: {purchase.available}</p>
-            <p className="text-center">Unit Price: {purchase.price}</p>
+              <h2 className="text-center font-bold">{purchase.name}</h2>
+              <p className="text-center">Minimum Quantity: {purchase.min}</p>
+              <p className="text-center">
+                Available Item: {purchase.available}
+              </p>
+              <p className="text-center">Unit Price: {purchase.price}</p>
             </p>
           </div>
         </div>

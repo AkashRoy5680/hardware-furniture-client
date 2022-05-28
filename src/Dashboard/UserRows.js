@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const userRows = ({user,refetch}) => {
     const{_id,email,role}=user;
     const makeAdmin=()=>{
-        fetch(`http://localhost:5000/user/admin/${email}`,{
+        fetch(`https://secure-beach-13890.herokuapp.com/user/admin/${email}`,{
             method:"PUT",
         })
         .then(res=>res.json())
@@ -16,7 +16,7 @@ const userRows = ({user,refetch}) => {
     }
 
     const deleteAdmin=()=>{
-        fetch(`http://localhost:5000/admin/${email}`,{
+        fetch(`https://secure-beach-13890.herokuapp.com/admin/${email}`,{
             method:"DELETE",
         })
         .then(res=>res.json())
