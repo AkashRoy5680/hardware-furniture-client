@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-fireba
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../Firebase/Firebase.init";
+import useToken from "../hooks/useToken";
 import google from "../Images/social/google.png";
 import Loading from "../Shared/Loading";
 
@@ -17,6 +18,8 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const navigate=useNavigate();
+
+    const [token]=useToken(gUser ||user);
 
     let signInError;
 

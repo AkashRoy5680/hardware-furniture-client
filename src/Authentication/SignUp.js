@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from "../Firebase/Firebase.init";
 import google from "../Images/social/google.png";
+import useToken from "../hooks/useToken";
 
 const SignUp = () => {
     const { register,formState: { errors },handleSubmit,reset } = useForm();
@@ -15,8 +16,10 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [token]=useToken(gUser ||user);
 
-      const onSubmit = async(data) => {console.log(data)
+      const onSubmit = async(data) => {
+      console.log(data)
       await createUserWithEmailAndPassword(data.email, data.password)};
       reset();
     
