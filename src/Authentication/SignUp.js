@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-fi
 import auth from "../Firebase/Firebase.init";
 import google from "../Images/social/google.png";
 import useToken from "../hooks/useToken";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
     const { register,formState: { errors },handleSubmit,reset } = useForm();
@@ -20,14 +21,17 @@ const SignUp = () => {
 
       const onSubmit = async(data) => {
       console.log(data)
-      await createUserWithEmailAndPassword(data.email, data.password)};
+      await createUserWithEmailAndPassword(data.email, data.password)
       reset();
-    
-    if(user){
-        //navigate("/home");
-        console.log("user",user);
-        <p>Registered User: {user.email}</p>
-    }  
+      toast.success("Your account is created.please log in");
+      navigate("/login");
+    };
+      
+     
+    if(user||gUser){
+      navigate("/home");
+  }
+ 
 
   return (
       <div>

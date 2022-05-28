@@ -1,7 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
 import Business from './Business';
-import Review from './Review';
 import Reviews from './Reviews';
 import Tools from './Tools';
 

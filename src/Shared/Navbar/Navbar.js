@@ -33,15 +33,13 @@ const Navbar = () => {
         {user ? (
           <button onClick={logout} class="btn btn-ghost">
            <span>Sign Out</span>
-           <p className="text-secondary font-bold">{user.displayName}</p>
+           <p className="font-bold text-yellow-500 ">{user.displayName}</p>
           </button>
         ) : (
           <Link to="/login">Login</Link>
         )}
       </li>
-      <li>
-        <Link to="/signup">SignUp</Link>
-      </li>
+    
     </>
   );
   return (
