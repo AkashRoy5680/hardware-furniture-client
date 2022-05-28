@@ -20,6 +20,7 @@ import MyProfile from './Dashboard/MyProfile';
 import Users from './Dashboard/Users';
 import Payment from './Dashboard/Payment';
 import AddProduct from './Dashboard/AddProduct';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
     <Route path="/myprofile" element={<MyProfile></MyProfile>}></Route>
     <Route path="/login" element={<Login></Login>}></Route>
     <Route path="/signup" element={<SignUp></SignUp>}></Route>
+    <Route path="/blogs" element={<Blogs></Blogs>}></Route>
     <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route>
     <Route path="/dashboard" element={<Dashboard></Dashboard>}>
     <Route index element={<MyOrder></MyOrder>}></Route>
