@@ -79,7 +79,7 @@ const Purchase = () => {
                     placeholder="UserName"
                     class="input input-bordered"
                     {...register("username")}
-                    value={user.displayName}
+                    value={user?.displayName}
                   />
                 </div>
                 <div class="form-control">

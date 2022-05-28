@@ -11,7 +11,12 @@ const userRows = ({user,refetch}) => {
         .then(data=>{
         refetch();
         toast.success("Successfull made an admin")
+        
         })
+    }
+
+    const deleteAdmin=()=>{
+
     }
     return (
         <tr>
@@ -19,7 +24,7 @@ const userRows = ({user,refetch}) => {
         <td>{_id}</td>
         <td>{email}</td>
         <td>{role !=="admin" &&<button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-        <td><button class="btn btn-xs">Remove User</button></td>
+        <td><button onClick={deleteAdmin} class="btn btn-xs">Remove User</button></td>
       </tr> 
      
     );
