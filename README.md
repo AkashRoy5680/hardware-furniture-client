@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Parts Hub 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Parts-Hub](https://parts-hub-6a16f.web.app/).
+
+# Featured of this projects:
+- used daisy UI and tailwind
+- implement authentication system both manual and social user
+- make admin dashboard where admin insert a product, make a user admin, delete a user
+- shows the reviews of user
+- used nested route and user can update their profile
+
 
 ## Available Scripts
 
