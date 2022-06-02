@@ -26,6 +26,7 @@ import MyPortfolio from './Pages/MyPortfoilo/MyPortfolio';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import RequireAuth from './Shared/RequireAuth';
 
 function App() {
 
@@ -46,7 +47,9 @@ function App() {
     <Route path="/signup" element={<SignUp></SignUp>}></Route>
     <Route path="/blogs" element={<Blogs></Blogs>}></Route>
     <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
-    <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route>
+    <Route path="/purchase/:id" element={<RequireAuth>
+      <Purchase></Purchase>
+    </RequireAuth>}></Route>
     <Route path="/dashboard" element={<Dashboard></Dashboard>}>
     <Route index element={<MyOrder></MyOrder>}></Route>
     <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>

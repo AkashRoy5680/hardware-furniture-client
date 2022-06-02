@@ -13,7 +13,7 @@ const Business = () => {
   <div class="stat">
     <div class="stat-figure text-secondary">
     </div>
-    <div class="stat-value justify-center"><FaHammer/></div>
+    <div data-aos="zoom-in" class="stat-value justify-center"><FaHammer/></div>
     <div class="stat-value text-green-600">31K</div>
     <div class="stat-desc text-secondary">Tech Appliences parts</div>
   </div>
@@ -21,7 +21,7 @@ const Business = () => {
   <div class="stat">
     <div class="stat-figure text-secondary">
     </div>
-    <div class="stat-value justify-center"><FaUserTie/></div>
+    <div data-aos="zoom-in" class="stat-value justify-center"><FaUserTie/></div>
     <div class="stat-value text-orange-500">1,200</div>
     <div class="stat-desc text-secondary">Employee</div>
   </div>
