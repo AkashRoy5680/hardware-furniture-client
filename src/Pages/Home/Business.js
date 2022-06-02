@@ -8,7 +8,7 @@ const Business = () => {
       
     <div>
       <h2 className='text-2xl text-secondary font-bold m-5 uppercase'>Millions business trust us</h2>
-  <div class="stats shadow grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  ">
+  <div data-aos="fade-up-right" class="stats shadow grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3   ">
 
   <div class="stat">
     <div class="stat-figure text-secondary">

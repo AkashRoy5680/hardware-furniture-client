@@ -6,7 +6,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        partstheme: {
+        light: {
           primary: "#241459",
           secondary: "#380209",
           accent: "#3A4256",
@@ -15,7 +15,6 @@ module.exports = {
         },
       },
       "dark",
-      "cupcake",
     ],
   },
   plugins: [require("daisyui")],

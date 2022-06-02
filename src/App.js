@@ -23,7 +23,15 @@ import AddProduct from './Dashboard/AddProduct';
 import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfoilo/MyPortfolio';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 function App() {
+
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
     <div className="App">
       <Navbar></Navbar>
