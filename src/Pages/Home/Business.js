@@ -29,7 +29,7 @@ const Business = () => {
   <div class="stat">
     <div class="stat-figure text-secondary">
     </div>
-    <div class="stat-value"><FaRegEdit/></div>
+    <div data-aos="zoom-in" class="stat-value"><FaRegEdit/></div>
     <div class="stat-value text-blue-600">500+</div>
     <div class="stat-desc text-secondary">Projects</div>
   </div>

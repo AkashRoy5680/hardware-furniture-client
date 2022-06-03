@@ -1,11 +1,13 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/Firebase.init";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
+  const [dark,setDark]=useState(false);
+  console.log(dark)
   const navigate = useNavigate();
 
   const logout = () => {
@@ -41,7 +43,7 @@ const Navbar = () => {
       </li>
       
         <label  class="swap swap-rotate">
-          <input type="checkbox" data-toggle-theme="dark,light" />
+          <input type="checkbox" onClick={()=>setDark(!dark)}  />
 
           <svg
             class="swap-on fill-current w-10 h-10 "
@@ -63,7 +65,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-100 sticky top-0 z-50 bg-secondary lg:text-white">
+    <div data-theme={dark?"dark":"light"} class="navbar bg-base-100 sticky top-0 z-50 bg-secondary lg:text-white">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
