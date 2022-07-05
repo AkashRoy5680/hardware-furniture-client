@@ -9,7 +9,8 @@ const StayConnected = () => {
         </h1>
 
         <div className=" mt-10">
-          <div className="grid grid-cols-1 font-koulen md:grid-cols-2 gap-6">
+         <div>
+         <div className="grid grid-cols-1 font-koulen md:grid-cols-2 gap-6">
             <input
               type="text"
               placeholder="First Name"
@@ -32,14 +33,16 @@ const StayConnected = () => {
               className="input w-full py-5"
             />
           </div>
-
-          <textarea
-            className="textarea font-koulen resize-none w-full pb-20 mt-6"
-            placeholder="Your Message"
-          ></textarea>
-          <button className="px-8 mt-8 block mx-auto  rounded py-3 hover:bg-orange-700 transition duration-300 ease-in-out bg-primary text-white">
-            Send Message
-          </button>
+          <div>
+            <textarea
+              className="textarea font-koulen resize-none w-full pb-20 mt-6"
+              placeholder="Your Message"
+            ></textarea>
+            <button className="px-8 mt-8 block mx-auto  rounded py-3 hover:bg-orange-700 transition duration-300 ease-in-out bg-primary text-white">
+              Send Message
+            </button>
+          </div>
+         </div>
         </div>
       </div>
     </div>
