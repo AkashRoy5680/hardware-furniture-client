@@ -6,8 +6,11 @@ import { FaRegEdit } from 'react-icons/fa';
 const Business = () => {
     return (
       
-    <div>
-      <h2 className='text-2xl text-secondary font-bold m-5 uppercase'>Millions business trust us</h2>
+    <div className='bg-gray-200 py-16 px-8'>
+      <h1 className="uppercase text-center text-primary font-bold text-4xl pb-8">
+          {" "}
+          Summary of bussiness
+        </h1>
   <div data-aos="fade-up-right" class="stats shadow grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3   ">
 
   <div class="stat">

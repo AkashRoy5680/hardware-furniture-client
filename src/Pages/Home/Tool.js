@@ -14,9 +14,9 @@ import auth from "../../Firebase/Firebase.init";
 
   return (
     <div>
-      <div class="card lg:card-side bg-base-100 shadow-xl">
+      <div class="card lg:card-side bg-white shadow-xl ">
         <figure>
-          <img src={img} alt="Album" />
+          <img className="w-full   mb-2 p-4 " src={img} alt="Album" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{name}</h2>

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@stripe/react-stripe-js": "^1.8.1",
     "@stripe/stripe-js": "^1.30.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -22,6 +23,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.1",
     "stripe": "^9.5.0",
+    "swiper": "^8.2.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

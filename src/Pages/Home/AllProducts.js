@@ -1,18 +1,15 @@
 import { ArrowCircleRightIcon } from "@heroicons/react/solid";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import useParts from "../../hooks/useParts";
 import Tool from "./Tool";
 
-const Tools = () => {
+const AllProducts = () => {
   const [tools, setTools] = useParts();
-  const newTools = tools.slice(0, 3);
-  const navigate=useNavigate();
   return (
     <div className="bg-neutral p-8">
       <div>
         <div class="text-center">
-        <h1 className="text-4xl text-center text-orange-400 mb-5 uppercase font-bold pt-8">
+        <h1 className="text-4xl text-center text-accent mb-5 uppercase font-bold pt-8">
           Recenlty Menufectured
         </h1>
         <div className="flex justify-center items-center gap-2 mb-10">
@@ -23,17 +20,16 @@ const Tools = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center py-6 px-6 ">
-        {newTools.map((tool) => (
+        {tools.map((tool) => (
           <Tool key={tool._id} tool={tool}></Tool>
         ))}
       </div>
-      <button className="btn btn-primary btn-md mx-auto flex items-center mt-5"
-      onClick={()=>navigate('/all-products')} >
-          Explore All Parts Tools
+      <button className="btn btn-primary btn-md mx-auto flex items-center mt-5" >
+          Explore All Painting Tools
           <ArrowCircleRightIcon className="h-8 w-8 ml-3" />
         </button>
     </div>
   );
 };
 
-export default Tools;
+export default AllProducts;
