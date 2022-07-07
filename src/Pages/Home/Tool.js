@@ -14,15 +14,18 @@ import auth from "../../Firebase/Firebase.init";
 
   return (
     <div>
-      <div class="card lg:card-side bg-white shadow-xl ">
-        <figure>
-          <img className="w-full   mb-2 p-4 " src={img} alt="Album" />
-        </figure>
+      <div class="card lg:card-side bg-white shadow-xl transform transition duration-500 scale-90 hover:scale-100   ">
+        
         <div class="card-body">
+        <figure>
+          <img className="w-full  mb-2 font-semibold" src={img} alt="Album" />
+        </figure>
           <h2 class="card-title">{name}</h2>
-          <p>Price: {price}</p>
-          <p>Availability: {available}</p>
-          <p>Minimum Order: {min}</p>
+          <div>
+          <p className="font-bold">Price: {price}</p>
+          <p className="font-bold">Availability: {available}</p>
+          <p className="font-bold">Minimum Order: {min}</p>
+          </div>
           <div class="card-actions justify-end">
             <button
               onClick={() => redirectPurchase(_id)}

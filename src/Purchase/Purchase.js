@@ -65,14 +65,14 @@ const Purchase = () => {
 
   return (
     <div>
-      <div class="hero h-screen bg-base-200">
+      <div class="hero h-screen bg-white">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
+            <div class="card-body bg-neutral">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div class="form-control">
+                <div class="form-control ">
                   <label class="label">
-                    <span class="label-text">UserName</span>
+                    <span class="label-text text-white">UserName</span>
                   </label>
                   <input
                     type="text"
@@ -84,7 +84,7 @@ const Purchase = () => {
                 </div>
                 <div class="form-control">
                   <label class="label">
-                    <span class="label-text">Email</span>
+                    <span class="label-text text-white">Email</span>
                   </label>
                   <input
                     type="email"
@@ -98,7 +98,7 @@ const Purchase = () => {
 
                 <div class="form-control">
                   <label class="label">
-                    <span class="label-text">Product Name</span>
+                    <span class="label-text text-white">Product Name</span>
                   </label>
                   <input
                     type="text"
@@ -112,7 +112,7 @@ const Purchase = () => {
 
                 <div class="form-control">
                   <label class="label">
-                    <span class="label-text">Availability</span>
+                    <span class="label-text text-white">Availability</span>
                   </label>
                   <input
                     type="number"
@@ -126,7 +126,7 @@ const Purchase = () => {
                 </div>
                 <div class="form-control">
                   <label class="label">
-                    <span class="label-text">Price</span>
+                    <span class="label-text text-white">Price</span>
                   </label>
                   <input
                     type="number"
@@ -139,12 +139,12 @@ const Purchase = () => {
                 </div>
 
                 <div class="form-control">
-                  <button class="btn btn-primary text-white mt-2">Order</button>
+                  <button class="btn btn-primary text-white mt-6">Order</button>
                 </div>
               </form>
             </div>
           </div>
-          <div class="text-center lg:text-left">
+          <div class="text-center lg:text-left border border-indigo-600">
             <img
               style={{ height: "200px", width: "400px" }}
               src={purchase.img}

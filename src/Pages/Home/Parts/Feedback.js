@@ -15,7 +15,7 @@ const Feedback = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [sortedReview, setSortedReview] = useState([]);
   useEffect(() => {
-    fetch("https://tranquil-earth-82270.herokuapp.com/review")
+    fetch("https://secure-beach-13890.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => setAllReviews(data));
   }, []);

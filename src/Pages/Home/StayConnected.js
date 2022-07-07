@@ -1,5 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com"
+import { toast } from "react-toastify";
 const StayConnected = () => {
   function sendEmail(e){
     e.preventDefault();
@@ -8,6 +9,7 @@ const StayConnected = () => {
     }).catch(err=>{
         console.log(err)
     });
+    toast("Your opinion submitted")
     e.target.reset();
     
 }
