@@ -9,7 +9,7 @@ const AddAReview = () => {
   const [user] = useAuthState(auth);
   const increase = () => {
     if (rating < 5) {
-      setRating(rating + 1);
+      setRating(rating );
     }
   };
   const decrease = () => {
