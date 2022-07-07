@@ -53,7 +53,6 @@ console.log(imageUrl)
   };
   return (
     <div>
-      <h2>Add a new Product !!!</h2>
       <div class="hero h-screen bg-base-300">
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div class="card-body">
@@ -81,7 +80,7 @@ console.log(imageUrl)
                 />
               </div>
 
-              <div class="form-control">
+            {/*  <div class="form-control">
                 <label class="label">
                   <span class="label-text">Description</span>
                 </label>
@@ -91,7 +90,7 @@ console.log(imageUrl)
                   class="input input-bordered"
                   {...register("description")}
                 />
-              </div>
+  </div>*/}
 
               <div class="form-control">
                 <label class="label">
@@ -130,7 +129,7 @@ console.log(imageUrl)
               </div>
 
               <div class="form-control">
-                <button class="btn btn-primary text-white mt-2">
+                <button class="btn btn-accent text-white mt-2">
                   Add Product
                 </button>
               </div>

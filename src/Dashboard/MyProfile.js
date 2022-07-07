@@ -34,7 +34,6 @@ const MyProfile = () => {
   }
   return (
     <div>
-      <h2>My Profile!</h2>
       <div>
         <div class="hero h-screen bg-base-200">
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
