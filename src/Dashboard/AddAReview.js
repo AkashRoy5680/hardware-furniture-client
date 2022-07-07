@@ -9,7 +9,7 @@ const AddAReview = () => {
   const [user] = useAuthState(auth);
   const increase = () => {
     if (rating < 5) {
-      setRating(rating );
+      setRating(rating + 1);
     }
   };
   const decrease = () => {
@@ -27,7 +27,7 @@ const AddAReview = () => {
         name: user.displayName,
         address: "CEO, Manpol",
       };
-      fetch("https://tranquil-earth-82270.herokuapp.com/review", {
+      fetch("https://secure-beach-13890.herokuapp.com/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",
