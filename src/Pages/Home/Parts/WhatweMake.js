@@ -17,32 +17,29 @@ const WhatweMake = () => {
       <div className="grid container mt-3 grid-cols-1 md:grid-cols-2  gap-10 justify-center lg:grid-cols-3 pt-5 pb-16">
         <div className="text-center">
           <h2 className="text-2xl text-gray-400 mb-3 font-semibold uppercase">
-            Home Painting Tools
+            Appliances Hardware Tools
           </h2>
           <p className=" text-gray-400 font-thin">
-            We are best in the market to Menufectures home painting tools. The
-            best part of us. Our customer bealive us. and We provide best of
-            Best Home Painting Tools.
+            We are best in the market to Menufectures appliance hardware tools. The best part of us is our customer bealive us and We provide best of
+            quality Home hardware Tools.
           </p>
         </div>
         <div className="text-center">
           <h2 className="text-2xl text-gray-400 mb-3 font-semibold uppercase">
-            Professional Tools
+            Industrial Hardware Tools
           </h2>
           <p className=" text-gray-400 font-thin">
-            The industry painting expert are recommend our painting Tools. They
+            The industry expert are recommend our hardware tools. They
             know we are best in the market and we also know we have more and
-            more quality and design
+            more quality and design.
           </p>
         </div>
         <div className="text-center ">
           <h2 className="text-2xl text-gray-400 mb-3 font-semibold uppercase">
-            Student Paint Tools
+            Shipping Hardware Tools
           </h2>
           <p className=" text-gray-400 font-thin">
-            We love learning. When it is about painting we just fall in love .
-            Student concern our one of the main priority. student are also
-            recommend our Painting Tools and Other Tools.
+            We love customer satisfication. When it is about manufacturing we just thinking about the flexibility.Customer concern our one of the main priority. Experts are also recommend our hardware Tools and Other Tools.
           </p>
         </div>
       </div>

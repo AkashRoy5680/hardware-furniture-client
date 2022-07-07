@@ -38,7 +38,7 @@ const Navbar = () => {
         {user ? (
           <button onClick={logout} class="btn btn-ghost">
             <span>Sign Out</span>
-            <p className="font-bold text-blue-500 ">{user.displayName}</p>
+            <p className="font-bold text-white ">{user.displayName}</p>
           </button>
         ) : (
           <NavLink to="/login">Login</NavLink>
@@ -68,7 +68,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div data-theme={dark?"dark":"light"} class="navbar bg-base-100 sticky top-0 z-50 bg-neutral lg:text-gray-400 font-semibold">
+    <div data-theme={dark?"dark":"light"} class="navbar bg-base-100 sticky top-0 z-50 bg-secondary lg:text-black font-semibold">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -94,7 +94,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl text-blue-500">Parts||Hub</a>
+        <a class="btn btn-ghost normal-case text-xl text-white">Parts||Hub</a>
       </div>
       <div class="navbar-center hidden lg:flex ">
         <ul class="menu menu-horizontal p-0">{menuItems}</ul>

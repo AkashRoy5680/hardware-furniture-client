@@ -18,7 +18,7 @@ const Business = () => {
     </div>
     <div data-aos="zoom-in" class="stat-value justify-center"><FaHammer/></div>
     <div class="stat-value text-green-600">31K</div>
-    <div class="stat-desc text-secondary">Tech Appliences parts</div>
+    <div class="stat-desc text-neutral">Tech Appliences parts</div>
   </div>
   
   <div class="stat">
@@ -26,7 +26,7 @@ const Business = () => {
     </div>
     <div data-aos="zoom-in" class="stat-value justify-center"><FaUserTie/></div>
     <div class="stat-value text-orange-500">1,200</div>
-    <div class="stat-desc text-secondary">Employee</div>
+    <div class="stat-desc text-neutral">Employee</div>
   </div>
   
   <div class="stat">
@@ -34,7 +34,7 @@ const Business = () => {
     </div>
     <div data-aos="zoom-in" class="stat-value"><FaRegEdit/></div>
     <div class="stat-value text-blue-600">500+</div>
-    <div class="stat-desc text-secondary">Projects</div>
+    <div class="stat-desc text-neutral">Projects</div>
   </div>
   
 </div>
